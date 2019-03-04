@@ -14,6 +14,7 @@
     Dim porOp As Double = 0.2
     Const TasaGrupo As Decimal = 0.13
     Const TasaExternos As Decimal = 0.15
+    Const PorcReserva As Decimal = 0.3
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -968,7 +969,7 @@
             ta.UpdateAnexo(Monto, Me.LI_PlazosTableAdapter.ScalarMeses(ComboPlazo.SelectedValue),
                            TasaAnual * 100, TxtRenta.Text, DfechaVenc.Value.ToString("yyyyMMdd"), Frecuencia,
                            GridAmortizaciones.Rows(1).Cells("dias").Value, NoPagos, TasaVidaMes, Comision * 100, Monto * Comision, porOp * 100,
-                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, ComboAnexo.SelectedValue)
+                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, ComboAnexo.SelectedValue)
             Dim letra As String = ""
             Taa.DeleteAnexo(ComboAnexo.SelectedValue)
             For Each rr As DataGridViewRow In GridAmortizaciones.Rows

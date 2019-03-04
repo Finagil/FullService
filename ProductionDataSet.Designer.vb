@@ -9527,20 +9527,20 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(1).CommandText = "INSERT INTO Anexos"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Anexo, Flcan, Vencida, Garantia, Re"& _ 
                 "ferencia, Cliente, Impeq, Segeq, Finse, Plazo, Plaseg, Ivaeq, Ivase, Porieq, Por"& _ 
                 "Int, Amorin, IvaAmorin, Tippe, Tipta, Tasas, Difer, AcumulaIntereses, Tipar, For"& _ 
-                "ca, Tipmen, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RtasD, ImpRD, IvaRD, Porco, Comis, Porop,"& _ 
+                "ca, Tipmen, RtasD, ImpRD, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         IvaRD, Porco, Comis, Porop,"& _ 
                 " Fechacon, Fvenc, Fondeo, DepNafin, Critas, Tipeq, Gastos, IvaGastos, Tipmon, Me"& _ 
-                "nsu, Tasmor, Taspen, Doc1, Doc2, Doc3, Prendaria, Prenda, Observa, Fechafin, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
-                "                        Factor, Piso, Techo, Tasamax, Adeudo, RD, ImpDG, IvaDG, "& _ 
+                "nsu, Tasmor, Taspen, Doc1, Doc2, Doc3, Prendaria, Prenda, Observa, Fechafin, Fac"& _ 
+                "tor, Piso, Techo, Tasamax, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Adeudo, RD, ImpDG, IvaDG, "& _ 
                 "Derechos, DG, GHipotec, Lugar, Notaria, Escritura, Scaneo, Archivo, Servicio, IV"& _ 
-                "AServicio, Fecha_Pago, Cobertura, Pagos, TipoFrecuencia, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    ValorFrecuencia, Amortizaciones, Banco, CuentaCLABE, Autoriza, Titular, idCr"& _ 
-                "edito, LiquidezInmediata)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@Anexo, N'S', N'N', N'', N'',@Cliente,"& _ 
-                "@importe, 0, N'N',@plazo, 0, 0, 0, 0, 0, 0, 0, N'01', N'7',@tasa, 0, N'NO', N'S'"& _ 
-                ", N'1', N'V', 0, 0, 0, 0, 0, 0,@FechaCon,@FechaVen, N'01', 0, N'01', N'3', 0, 0,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         N'01',@Mensualidad, 2.0, 0, N'N', N'N', N'N', N'N', "& _ 
-                "N'N', N'', N'', 0, 0, 0, 0, N'N', 0, 0, 0, 0, 0, N'N', N'', N'', N'', N'N', N'',"& _ 
-                " 0, 0, N'', N'N', 0,@frecuencia,@vFrecuencia,@nopagos, N'', N'', N'S',@nombreCli"& _ 
-                ", N'0', 1)"
+                "AServicio, Fecha_Pago, Cobertura, Pagos, TipoFrecuencia, ValorFrecuencia, Amorti"& _ 
+                "zaciones, Banco, CuentaCLABE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Autoriza, Titular, idCr"& _ 
+                "edito, LiquidezInmediata, PorcReserva)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@Anexo, N'S', N'N', N'', "& _ 
+                "N'',@Cliente,@importe, 0, N'N',@plazo, 0, 0, 0, 0, 0, 0, 0, N'01', N'7',@tasa, 0"& _ 
+                ", N'NO', N'S', N'1', N'V', 0, 0, 0, 0, 0, 0,@FechaCon,@FechaVen, N'01', 0, N'01'"& _ 
+                ", N'3', 0, 0, N'01',@Mensualidad, 2.0, 0, N'N', "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         N'N',"& _ 
+                " N'N', N'N', N'N', N'', N'', 0, 0, 0, 0, N'N', 0, 0, 0, 0, 0, N'N', N'', N'', N'"& _ 
+                "', N'N', N'', 0, 0, N'', N'N', 0,@frecuencia,@vFrecuencia,@nopagos, N'', N'', N'"& _ 
+                "S',@nombreCli, N'0', 1, 0.3)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NChar, 9, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Cliente", Global.System.Data.SqlDbType.NChar, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "Cliente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9562,11 +9562,12 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "UPDATE       Anexos"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                Impeq = @importe, Plazo = @plazo, Tipta ="& _ 
                 " N'7', Tasas = @tasa, Mensu = @messualidad, Fvenc = @fven, TipoFrecuencia = @fre"& _ 
-                "cuencia, ValorFrecuencia = @valorfrec, Amortizaciones = @Amortizaciones, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
-                "                    idCredito = N'0', SeguroVida = @SeguroVida, Tipar = 'B', Por"& _ 
+                "cuencia, ValorFrecuencia = @valorfrec, Amortizaciones = @Amortizaciones, idCredi"& _ 
+                "to = N'0', "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         SeguroVida = @SeguroVida, Tipar = 'B', Por"& _ 
                 "co = @Porco, Comis = @comi, Porop = @Porop, Gastos = @Gastos, IvaGastos = @IvaGa"& _ 
-                "stos, Fechacon = @FechaCon, Ivaeq = @IvaEq, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ContratoM"& _ 
-                "arco = @ContratoMarco, Servicio = @Servicios"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Anexo = @Anexo)"
+                "stos, Fechacon = @FechaCon, Ivaeq = @IvaEq, ContratoMarco = @ContratoMarco, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
+                "                       Servicio = @Servicios, PorcReserva = @PorcReserva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
+                "       (Anexo = @Anexo)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@importe", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 11, 2, "Impeq", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@plazo", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "Plazo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9586,6 +9587,7 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IvaEq", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 11, 2, "Ivaeq", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContratoMarco", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "ContratoMarco", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Servicios", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 11, 2, "Servicio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PorcReserva", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 7, 4, "PorcReserva", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NChar, 9, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -9730,6 +9732,7 @@ Namespace ProductionDataSetTableAdapters
                     ByVal IvaEq As Decimal,  _
                     ByVal ContratoMarco As String,  _
                     ByVal Servicios As Decimal,  _
+                    ByVal PorcReserva As Global.System.Nullable(Of Decimal),  _
                     ByVal Anexo As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(importe,Decimal)
@@ -9770,10 +9773,15 @@ Namespace ProductionDataSetTableAdapters
                 command.Parameters(16).Value = CType(ContratoMarco,String)
             End If
             command.Parameters(17).Value = CType(Servicios,Decimal)
+            If (PorcReserva.HasValue = true) Then
+                command.Parameters(18).Value = CType(PorcReserva.Value,Decimal)
+            Else
+                command.Parameters(18).Value = Global.System.DBNull.Value
+            End If
             If (Anexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Anexo")
             Else
-                command.Parameters(18).Value = CType(Anexo,String)
+                command.Parameters(19).Value = CType(Anexo,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
