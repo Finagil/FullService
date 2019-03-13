@@ -925,6 +925,7 @@
         If MessageBox.Show("Está seguro de sobreescribir la tabla de Amortizacion", "Cambiar Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> Windows.Forms.DialogResult.Yes Then
             Exit Sub
         End If
+        Dim Planta As String = InputBox("Planta o ciudad del contrato FullService", "Agrupador FULLSERVICE", "TOLUCA").ToUpper
         Dim Monto As Double = CDbl(TxtMonto.Text)
         Dim IvaMonto As Double = Monto - (Monto / (1 + TasaIva))
         'Dim Impeq As Double = Math.Round(CDbl(LbImporte.Text) * (1 + TasaIva), 2)
@@ -969,7 +970,7 @@
             ta.UpdateAnexo(Monto, Me.LI_PlazosTableAdapter.ScalarMeses(ComboPlazo.SelectedValue),
                            TasaAnual * 100, TxtRenta.Text, DfechaVenc.Value.ToString("yyyyMMdd"), Frecuencia,
                            GridAmortizaciones.Rows(1).Cells("dias").Value, NoPagos, TasaVidaMes, Comision * 100, Monto * Comision, porOp * 100,
-                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, ComboAnexo.SelectedValue)
+                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, Planta, ComboAnexo.SelectedValue)
             Dim letra As String = ""
             Taa.DeleteAnexo(ComboAnexo.SelectedValue)
             For Each rr As DataGridViewRow In GridAmortizaciones.Rows

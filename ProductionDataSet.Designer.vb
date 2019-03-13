@@ -9566,8 +9566,8 @@ Namespace ProductionDataSetTableAdapters
                 "to = N'0', "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         SeguroVida = @SeguroVida, Tipar = 'B', Por"& _ 
                 "co = @Porco, Comis = @comi, Porop = @Porop, Gastos = @Gastos, IvaGastos = @IvaGa"& _ 
                 "stos, Fechacon = @FechaCon, Ivaeq = @IvaEq, ContratoMarco = @ContratoMarco, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       Servicio = @Servicios, PorcReserva = @PorcReserva"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       (Anexo = @Anexo)"
+                "                       Servicio = @Servicios, PorcReserva = @PorcReserva, CNEmpr"& _ 
+                "esa = @Empresa"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Anexo = @Anexo)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@importe", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 11, 2, "Impeq", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@plazo", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "Plazo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -9588,6 +9588,7 @@ Namespace ProductionDataSetTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ContratoMarco", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "ContratoMarco", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Servicios", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 11, 2, "Servicio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PorcReserva", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 7, 4, "PorcReserva", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Empresa", Global.System.Data.SqlDbType.NChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "CNEmpresa", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anexo", Global.System.Data.SqlDbType.NChar, 9, Global.System.Data.ParameterDirection.Input, 0, 0, "Anexo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -9733,6 +9734,7 @@ Namespace ProductionDataSetTableAdapters
                     ByVal ContratoMarco As String,  _
                     ByVal Servicios As Decimal,  _
                     ByVal PorcReserva As Global.System.Nullable(Of Decimal),  _
+                    ByVal Empresa As String,  _
                     ByVal Anexo As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(importe,Decimal)
@@ -9778,10 +9780,15 @@ Namespace ProductionDataSetTableAdapters
             Else
                 command.Parameters(18).Value = Global.System.DBNull.Value
             End If
+            If (Empresa Is Nothing) Then
+                command.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(19).Value = CType(Empresa,String)
+            End If
             If (Anexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Anexo")
             Else
-                command.Parameters(19).Value = CType(Anexo,String)
+                command.Parameters(20).Value = CType(Anexo,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
