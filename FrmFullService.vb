@@ -12,8 +12,8 @@
     Dim Comision As Double = 0.03
     Dim Rat As Double = 1000
     Dim porOp As Double = 0.2
-    Const TasaGrupo As Decimal = 0.13
-    Const TasaExternos As Decimal = 0.15
+    Const TasaGrupo As Decimal = 0.175
+    Const TasaExternos As Decimal = 0.19
     Const PorcReserva As Decimal = 0.3
 
 
