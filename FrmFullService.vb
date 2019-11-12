@@ -1,5 +1,5 @@
 ﻿Public Class FrmFullService
-    Const TasaIva As Double = 0.16
+    Dim TasaIva As Double = 0.16
     Dim TasaVidaMes As Double = 1
     Dim TasaVidaDia As Double = TasaVidaMes / 30.4
     Dim TasaVidaAnual As Double = TasaVidaMes * 12
@@ -101,6 +101,11 @@
         Else
             TxtMonto.Text = Format(CDbl(TxtMonto.Text), "N")
         End If
+        '+++++++++IVA
+        If RB16.Checked = True Then TasaIva = 0.16
+        If RB8.Checked = True Then TasaIva = 0.08
+        TasaAnualIva = TasaAnual * (1 + TasaIva)
+        '+++++++++IVA
         CalculaTabla()
         BtPrint.Enabled = True
         'CrystalReportViewer1.Visible = False
@@ -269,6 +274,7 @@
         Else
             newrptRepSalCli.SetParameterValue("Nombre", "")
         End If
+        newrptRepSalCli.SetParameterValue("IVA", TasaIva)
         newrptRepSalCli.SetParameterValue("CAT", Cat)
         newrptRepSalCli.SetParameterValue("Renta", TxtRenta.Text)
         newrptRepSalCli.SetParameterValue("Comision", (CDbl(TxtMonto.Text) / (1 + TasaIva)) * Comision)
@@ -928,7 +934,6 @@
         Dim Planta As String = InputBox("Planta o ciudad del contrato FullService", "Agrupador FULLSERVICE", "TOLUCA").ToUpper
         Dim Monto As Double = CDbl(TxtMonto.Text)
         Dim IvaMonto As Double = Monto - (Monto / (1 + TasaIva))
-        'Dim Impeq As Double = Math.Round(CDbl(LbImporte.Text) * (1 + TasaIva), 2)
         Dim Impeq As Double = Math.Round(CDbl(LbImporte.Text), 2)
         Dim Diferencia As Double = Monto - Impeq
         If Diferencia > 0.02 Or Diferencia < -0.02 Then
@@ -970,7 +975,7 @@
             ta.UpdateAnexo(Monto, Me.LI_PlazosTableAdapter.ScalarMeses(ComboPlazo.SelectedValue),
                            TasaAnual * 100, TxtRenta.Text, DfechaVenc.Value.ToString("yyyyMMdd"), Frecuencia,
                            GridAmortizaciones.Rows(1).Cells("dias").Value, NoPagos, TasaVidaMes, Comision * 100, Monto * Comision, porOp * 100,
-                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, Planta, ComboAnexo.SelectedValue)
+                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, Planta, TasaIva * 100, ComboAnexo.SelectedValue)
             Dim letra As String = ""
             Taa.DeleteAnexo(ComboAnexo.SelectedValue)
             For Each rr As DataGridViewRow In GridAmortizaciones.Rows
@@ -1002,7 +1007,6 @@
             MessageBox.Show("No exsiste tabla para cargar.", "Error de Tabla de Amortizacion.", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
-
 
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboAnexo.SelectedIndexChanged
         ButtonCargar.Enabled = True
@@ -1044,18 +1048,17 @@
             Else
                 TasaAnual = TasaGrupo
             End If
-
             TasaAnualIva = TasaAnual * (1 + TasaIva)
             TxtTasa.Text = TasaAnual.ToString("P02")
-            If ClientesTableAdapter.EsRelacionado(ComboCliente.SelectedValue) > 0 Then
-                Comision = 0.0125
-                If InStr(ComboCliente.Text, "ARFIN") > 0 Then
-                    Comision = 0.02
+                If ClientesTableAdapter.EsRelacionado(ComboCliente.SelectedValue) > 0 Then
+                    Comision = 0.0125
+                    If InStr(ComboCliente.Text, "ARFIN") > 0 Then
+                        Comision = 0.02
+                    End If
+                Else
+                    Comision = 0.03
                 End If
-            Else
-                Comision = 0.03
             End If
-        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged

@@ -23,18 +23,18 @@ Partial Class FrmFullService
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LbHide = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtRenta = New System.Windows.Forms.TextBox()
@@ -115,6 +115,8 @@ Partial Class FrmFullService
         Me.AnexosTableAdapter = New FullService.ProductionDataSetTableAdapters.AnexosTableAdapter()
         Me.CkIva = New System.Windows.Forms.CheckBox()
         Me.CkTasaGrp = New System.Windows.Forms.CheckBox()
+        Me.RB16 = New System.Windows.Forms.RadioButton()
+        Me.RB8 = New System.Windows.Forms.RadioButton()
         CType(Me.ServiciosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductionDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AnexosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -426,8 +428,8 @@ Partial Class FrmFullService
         'MontoDataGridViewTextBoxColumn
         '
         Me.MontoDataGridViewTextBoxColumn.DataPropertyName = "Monto"
-        DataGridViewCellStyle1.Format = "n2"
-        Me.MontoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Format = "n2"
+        Me.MontoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle13
         Me.MontoDataGridViewTextBoxColumn.HeaderText = "Monto"
         Me.MontoDataGridViewTextBoxColumn.Name = "MontoDataGridViewTextBoxColumn"
         Me.MontoDataGridViewTextBoxColumn.ReadOnly = True
@@ -720,9 +722,9 @@ Partial Class FrmFullService
         '
         'FechaVencimiento
         '
-        DataGridViewCellStyle2.Format = "d"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.FechaVencimiento.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Format = "d"
+        DataGridViewCellStyle14.NullValue = Nothing
+        Me.FechaVencimiento.DefaultCellStyle = DataGridViewCellStyle14
         Me.FechaVencimiento.HeaderText = "Fecha Vencimiento"
         Me.FechaVencimiento.Name = "FechaVencimiento"
         Me.FechaVencimiento.ReadOnly = True
@@ -730,9 +732,9 @@ Partial Class FrmFullService
         '
         'Dias
         '
-        DataGridViewCellStyle3.Format = "N0"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Dias.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Format = "N0"
+        DataGridViewCellStyle15.NullValue = Nothing
+        Me.Dias.DefaultCellStyle = DataGridViewCellStyle15
         Me.Dias.HeaderText = "Días"
         Me.Dias.Name = "Dias"
         Me.Dias.ReadOnly = True
@@ -740,10 +742,10 @@ Partial Class FrmFullService
         '
         'SaldoInsoluto
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.SaldoInsoluto.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle16.Format = "N2"
+        DataGridViewCellStyle16.NullValue = Nothing
+        Me.SaldoInsoluto.DefaultCellStyle = DataGridViewCellStyle16
         Me.SaldoInsoluto.HeaderText = "Saldo Insoluto"
         Me.SaldoInsoluto.Name = "SaldoInsoluto"
         Me.SaldoInsoluto.ReadOnly = True
@@ -751,8 +753,8 @@ Partial Class FrmFullService
         '
         'Extra
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Extra.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Extra.DefaultCellStyle = DataGridViewCellStyle17
         Me.Extra.HeaderText = "Pago Ext."
         Me.Extra.Name = "Extra"
         Me.Extra.ReadOnly = True
@@ -761,9 +763,9 @@ Partial Class FrmFullService
         '
         'Capital
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        Me.Capital.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle18.Format = "N2"
+        Me.Capital.DefaultCellStyle = DataGridViewCellStyle18
         Me.Capital.HeaderText = "Capital"
         Me.Capital.Name = "Capital"
         Me.Capital.ReadOnly = True
@@ -771,9 +773,9 @@ Partial Class FrmFullService
         '
         'Interes
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "N2"
-        Me.Interes.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle19.Format = "N2"
+        Me.Interes.DefaultCellStyle = DataGridViewCellStyle19
         Me.Interes.HeaderText = "Interes"
         Me.Interes.Name = "Interes"
         Me.Interes.ReadOnly = True
@@ -781,9 +783,9 @@ Partial Class FrmFullService
         '
         'pagos
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "N2"
-        Me.pagos.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle20.Format = "N2"
+        Me.pagos.DefaultCellStyle = DataGridViewCellStyle20
         Me.pagos.HeaderText = "Pago"
         Me.pagos.Name = "pagos"
         Me.pagos.ReadOnly = True
@@ -791,9 +793,9 @@ Partial Class FrmFullService
         '
         'IvaInteres
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "N2"
-        Me.IvaInteres.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle21.Format = "N2"
+        Me.IvaInteres.DefaultCellStyle = DataGridViewCellStyle21
         Me.IvaInteres.HeaderText = "Iva Interes"
         Me.IvaInteres.Name = "IvaInteres"
         Me.IvaInteres.ReadOnly = True
@@ -802,9 +804,9 @@ Partial Class FrmFullService
         '
         'Seguro
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "N2"
-        Me.Seguro.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle22.Format = "N2"
+        Me.Seguro.DefaultCellStyle = DataGridViewCellStyle22
         Me.Seguro.HeaderText = "Seguro de Vida"
         Me.Seguro.Name = "Seguro"
         Me.Seguro.ReadOnly = True
@@ -813,9 +815,9 @@ Partial Class FrmFullService
         '
         'PagoTotal
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Format = "N2"
-        Me.PagoTotal.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle23.Format = "N2"
+        Me.PagoTotal.DefaultCellStyle = DataGridViewCellStyle23
         Me.PagoTotal.HeaderText = "Pago Total"
         Me.PagoTotal.Name = "PagoTotal"
         Me.PagoTotal.ReadOnly = True
@@ -824,9 +826,9 @@ Partial Class FrmFullService
         '
         'Costo
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Format = "N2"
-        Me.Costo.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle24.Format = "N2"
+        Me.Costo.DefaultCellStyle = DataGridViewCellStyle24
         Me.Costo.HeaderText = "Costo"
         Me.Costo.Name = "Costo"
         Me.Costo.ReadOnly = True
@@ -882,11 +884,35 @@ Partial Class FrmFullService
         Me.CkTasaGrp.TabIndex = 173
         Me.CkTasaGrp.UseVisualStyleBackColor = True
         '
+        'RB16
+        '
+        Me.RB16.AutoSize = True
+        Me.RB16.Checked = True
+        Me.RB16.Location = New System.Drawing.Point(162, 159)
+        Me.RB16.Name = "RB16"
+        Me.RB16.Size = New System.Drawing.Size(65, 17)
+        Me.RB16.TabIndex = 174
+        Me.RB16.TabStop = True
+        Me.RB16.Text = "IVA 16%"
+        Me.RB16.UseVisualStyleBackColor = True
+        '
+        'RB8
+        '
+        Me.RB8.AutoSize = True
+        Me.RB8.Location = New System.Drawing.Point(233, 159)
+        Me.RB8.Name = "RB8"
+        Me.RB8.Size = New System.Drawing.Size(59, 17)
+        Me.RB8.TabIndex = 175
+        Me.RB8.Text = "IVA 8%"
+        Me.RB8.UseVisualStyleBackColor = True
+        '
         'FrmFullService
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1007, 617)
+        Me.Controls.Add(Me.RB8)
+        Me.Controls.Add(Me.RB16)
         Me.Controls.Add(Me.CkTasaGrp)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.LbHide)
@@ -1034,4 +1060,6 @@ Partial Class FrmFullService
     Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IVA As DataGridViewCheckBoxColumn
     Friend WithEvents CkTasaGrp As CheckBox
+    Friend WithEvents RB16 As RadioButton
+    Friend WithEvents RB8 As RadioButton
 End Class
