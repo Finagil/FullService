@@ -337,7 +337,7 @@
             FactorMeses = Val(r.Cells(2).Value)
             Restaplazo = 0
             If FactorMeses = 0 Then FactorMeses = Meses
-            If r.Cells(0).Value = "VERIFICACION SEMESTRAL" Then Restaplazo = 24
+            If r.Cells(0).Value = "VERIFICACIÓN SEMESTRAL" Then Restaplazo = 24
             Aux = ((CDbl(r.Cells(1).Value) / FactorMeses) * (Meses - Restaplazo))
             Service += Aux
             If r.Cells(4).Value = True Then
