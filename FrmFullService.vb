@@ -975,7 +975,7 @@
             ta.UpdateAnexo(Monto, Me.LI_PlazosTableAdapter.ScalarMeses(ComboPlazo.SelectedValue),
                            TasaAnual * 100, TxtRenta.Text, DfechaVenc.Value.ToString("yyyyMMdd"), Frecuencia,
                            GridAmortizaciones.Rows(1).Cells("dias").Value, NoPagos, TasaVidaMes, Comision * 100, Monto * Comision, porOp * 100,
-                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, Planta, TasaIva * 100, ComboAnexo.SelectedValue)
+                           Rat / (1 + TasaIva), (Rat / (1 + TasaIva)) * TasaIva, Dfechacon.Value.ToString("yyyyMMdd"), IvaMonto, ContratoMArco, Servicios, PorcReserva, Planta, TasaIva * 100, TxtTasa.Text, 0, ComboAnexo.SelectedValue)
             Dim letra As String = ""
             Taa.DeleteAnexo(ComboAnexo.SelectedValue)
             For Each rr As DataGridViewRow In GridAmortizaciones.Rows
